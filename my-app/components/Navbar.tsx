@@ -62,11 +62,11 @@ const Navbar = () => {
     >
       <div className="max-w-[1600px] mx-auto py-6 font-urban">
         <div className="flex flex-row justify-between items-center px-5 ">
-          <div className="font-bold text-2xl text-primaryText hover:text-primaryPurple cursor-pointer flex flex-row items-center space-x-1 duration-300">
+          <div className="font-bold text-2xl text-primaryPurple hover:text-primaryText cursor-pointer flex flex-row items-center space-x-1 duration-300">
             <p>LearningHub</p>
             <IoIosCafe size={30} />
           </div>
-          <div className="space-x-12 font-semibold hidden md:block">
+          <div className="space-x-12 font-semibold hidden lg:block">
             {links.map((item, index) => (
               <a
                 href={item.href}
@@ -77,10 +77,10 @@ const Navbar = () => {
               </a>
             ))}
           </div>
-          <div className="font-semibold py-3 px-7 bg-primaryPurple text-white rounded-md hidden md:block hover:bg-primaryText cursor-pointer duration-300">
+          <div className="font-semibold py-3 px-7 bg-primaryPurple text-white rounded-md hidden lg:block hover:bg-primaryText cursor-pointer duration-300">
             Contact Us
           </div>
-          <div className="bg-white p-3 rounded-xl md:hidden shadow-2xl border">
+          <div className="bg-white p-3 rounded-xl lg:hidden shadow-2xl border">
             <AiOutlineMenu
               className="text-black"
               size={25}
@@ -90,15 +90,15 @@ const Navbar = () => {
           <div
             className={
               nav
-                ? `bg-black/80 fixed top-0 left-0 w-[100%] h-screen z-10 p-5 duration-500 ease-out md:hidden`
-                : `right-[-100%] top-0 z-10 h-screen fixed duration-500 md:hidden`
+                ? `bg-black/80 fixed top-0 left-0 w-[100%] h-screen z-10 p-5 duration-500 ease-out lg:hidden`
+                : `right-[-100%] top-0 z-10 h-screen fixed duration-500 lg:hidden`
             }
           >
             <div
               className={
                 nav
-                  ? `bg-white fixed top-0 left-0 w-[83%] h-screen z-10 p-5 duration-500 ease-out md:hidden`
-                  : `left-[-100%] top-0 z-10 h-screen fixed duration-500 ease-out md:hidden`
+                  ? `bg-white fixed top-0 left-0 w-[83%] h-screen z-10 p-5 duration-500 ease-out lg:hidden`
+                  : `left-[-100%] top-0 z-10 h-screen fixed duration-500 ease-out lg:hidden`
               }
             >
               <div>

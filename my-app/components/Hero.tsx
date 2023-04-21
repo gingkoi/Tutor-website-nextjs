@@ -5,8 +5,8 @@ const Hero = () => {
   return (
     <section>
       <div className="md:my-[130px] mt-[130px] max-w-[1200px] mx-auto font-urban relative px-5">
-        <div className="md:h-[600px] h-full flex flex-col md:flex-row items-center justify-between">
-          <div className="flex flex-col md:space-y-10 space-y-8">
+        <div className="md:h-[800px] lg:h-[600px] h-full flex flex-col lg:flex-row items-center justify-between">
+          <div className="flex flex-col md:space-y-10 space-y-4">
             <div className="md:w-[700px] space-y-3">
               <div className="flex items-center w-full space-x-3">
                 <div className="bg-primaryPurple h-[2px] w-[8%]" />
@@ -14,7 +14,7 @@ const Hero = () => {
                   BETTER LEARNING FUTURE WITH US
                 </h1>
               </div>
-              <h1 className="text-primaryText text-6xl font-black">
+              <h1 className="text-primaryText md:text-6xl text-3xl font-black">
                 Committed To Learn Excellence In Education
               </h1>
             </div>
