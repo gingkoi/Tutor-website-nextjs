@@ -39,7 +39,7 @@ const CourseCard = ({
           </div>
           <div className="my-5">
             <a
-              className="font-bold bg-white text-primaryPurple p-4 rounded-lg flex"
+              className="font-bold bg-white text-primaryPurple p-4 rounded-lg flex items-center space-x-2"
               href="/"
             >
               <p>Know more</p>
