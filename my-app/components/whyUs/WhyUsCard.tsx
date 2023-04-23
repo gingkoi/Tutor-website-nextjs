@@ -1,6 +1,7 @@
+"use client";
 import React from "react";
 import Image from "next/image";
-import CountUp from "../CountUp";
+import CountUp from "react-countup";
 
 const whyUsCard = ({
   image,
@@ -18,7 +19,7 @@ const whyUsCard = ({
       </div>
       <div className="text-center space-y-2">
         <div className="text-primaryText font-bold text-5xl">
-          <CountUp end={number} />
+          <CountUp end={number} duration={2} />
         </div>
         <p className="text-primaryGray text-lg">{title}</p>
       </div>

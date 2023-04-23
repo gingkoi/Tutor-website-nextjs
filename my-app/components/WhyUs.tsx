@@ -1,8 +1,6 @@
-import Image from "next/image";
 import React from "react";
 import { BsEmojiSmile, BsClock, BsHeadset } from "react-icons/bs";
 import WhyUsCard from "./whyUs/WhyUsCard";
-import CountUp from "./CountUp";
 
 const WhyUs = () => {
   const data = [
