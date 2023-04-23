@@ -1,4 +1,5 @@
 import About from "@/components/About";
+import BottomBanner from "@/components/BottomBanner";
 import Courses from "@/components/Courses";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
@@ -14,6 +15,7 @@ export default function Home() {
       <Courses />
       <Testimonial />
       <WhyUs />
+      <BottomBanner />
     </main>
   );
 }

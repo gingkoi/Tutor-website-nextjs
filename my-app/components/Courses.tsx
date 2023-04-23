@@ -40,7 +40,7 @@ const Courses = () => {
             ))}
           </div>
         </div>
-        <div className="grid md:grid-cols-3 md:my-10 my-5 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 lg:my-10 my-5 gap-8">
           {click === 0 &&
             db.map((item, index) => (
               <CourseCard

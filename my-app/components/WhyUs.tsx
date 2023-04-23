@@ -29,8 +29,8 @@ const WhyUs = () => {
   return (
     <section className="bg-white font-urban">
       <div className="max-w-[1200px] mx-auto lg:py-36 py-20 font-urban px-5">
-        <div className="grid lg:grid-cols-2 md:space-x-16 space-y-10 md:space-y-0">
-          <div className="grid md:grid-cols-2 gap-5">
+        <div className="grid lg:grid-cols-2 md:space-x-16 space-y-10 lg:space-y-0">
+          <div className="grid lg:grid-cols-2 gap-5">
             {data.map((item, index) => (
               <WhyUsCard
                 title={item.title}

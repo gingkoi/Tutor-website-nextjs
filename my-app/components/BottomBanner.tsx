@@ -1,7 +1,33 @@
 import React from "react";
+import { BsArrowRight, BsFillTelephoneFill } from "react-icons/bs";
 
 const BottomBanner = () => {
-  return <div>BottomBanner</div>;
+  return (
+    <section className="bg-primaryPurple font-urban">
+      <div className="max-w-[1200px] mx-auto lg:py-24 py-20 font-urban px-5">
+        <div className="flex flex-col lg:flex-row items-center justify-between space-y-5 lg:space-y-0">
+          <div className="space-y-3">
+            <h4 className="text-white uppercase font-bold tracking-widest lg:text-left text-center">
+              LET US HELP
+            </h4>
+            <h4 className="text-white font-black md:text-5xl text-3xl md:text-left text-center">
+              Finding Your Right Courses
+            </h4>
+          </div>
+          <div className="flex flex-col lg:flex-row items-center lg:space-x-10 space-y-5 lg:space-y-0">
+            <div className="px-8 py-4 bg-white text-primaryPurple font-bold text-xl rounded-lg flex items-center space-x-1 hover:text-white hover:bg-primaryOrange duration-300 cursor-pointer">
+              <p>Get Started Today</p>
+              <BsArrowRight size={25} />
+            </div>
+            <div className="text-white font-bold flex items-center space-x-1">
+              <BsFillTelephoneFill size={25} />
+              <p className="text-lg">+65 6189 9654</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default BottomBanner;

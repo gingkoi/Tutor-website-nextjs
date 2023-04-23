@@ -1,5 +1,5 @@
+"use client";
 import React from "react";
-import { BsFillStarFill } from "react-icons/bs";
 import TestimonialCard from "./testimonial/TestimonialCard";
 
 const Testimonial = () => {
@@ -36,7 +36,7 @@ const Testimonial = () => {
               Our Lovely Students Feedback
             </h4>
           </div>
-          <div className="my-10 grid md:grid-cols-3 gap-10">
+          <div className="my-10 grid lg:grid-cols-3 gap-10">
             {data.map((item, index) => (
               <TestimonialCard
                 name={item.name}
