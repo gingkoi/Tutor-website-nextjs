@@ -104,10 +104,10 @@ const Navbar = () => {
               <div>
                 <div className="flex flex-row items-center justify-between border-b pb-5 my-3">
                   <div className="flex flex-row items-center space-x-1">
-                    <p className="font-bold text-primaryText text-xl">
+                    <p className="font-bold text-primaryPurple text-xl">
                       LearningHub
                     </p>
-                    <IoIosCafe size={30} className="text-primaryText" />
+                    <IoIosCafe size={30} className="text-primaryPurple" />
                   </div>
                   <div className="bg-white border rounded-full p-3 shadow-2xl">
                     <AiOutlineClose

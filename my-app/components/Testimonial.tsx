@@ -32,11 +32,11 @@ const Testimonial = () => {
             <h4 className="text-primaryPurple uppercase font-bold tracking-widest text-center">
               TESTIMONIAL
             </h4>
-            <h4 className="text-primaryText font-black md:text-4xl text-3xl">
+            <h4 className="text-primaryText font-black md:text-4xl text-3xl md:text-left text-center">
               Our Lovely Students Feedback
             </h4>
           </div>
-          <div className="my-10 grid grid-cols-3 gap-10">
+          <div className="my-10 grid md:grid-cols-3 gap-10">
             {data.map((item, index) => (
               <TestimonialCard
                 name={item.name}
