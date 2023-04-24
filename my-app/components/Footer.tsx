@@ -6,7 +6,7 @@ import {
   RiPinterestFill,
   RiSendPlane2Fill,
 } from "react-icons/ri";
-
+import { Link } from "react-scroll/modules";
 import { BsGeoAlt, BsFillTelephoneFill, BsEnvelopeAt } from "react-icons/bs";
 
 const Footer = () => {
@@ -29,6 +29,34 @@ const Footer = () => {
     },
   ];
 
+  const links = [
+    {
+      name: "Home",
+      href: "hero",
+      offset: -100,
+    },
+    {
+      name: "About",
+      href: "about",
+      offset: 0,
+    },
+    {
+      name: "Courses",
+      href: "courses",
+      offset: 0,
+    },
+    {
+      name: "Testimonial",
+      href: "testimonial",
+      offset: 0,
+    },
+    {
+      name: "Why Us",
+      href: "why-us",
+      offset: 0,
+    },
+  ];
+
   const contact = [
     {
       name: "Noida Sector 110",
@@ -45,10 +73,10 @@ const Footer = () => {
   ];
 
   return (
-    <section className="bg-primaryText font-urban text-white">
+    <section className="bg-primaryText font-urban text-white" id="contact">
       <div className="max-w-[1200px] mx-auto lg:pt-36 py-20 font-urban px-5">
         <div className="grid lg:grid-cols-2 lg:space-x-20 space-y-10 lg:space-y-0">
-          <div className="flex flex-col justify-between space-y-5 lg:space-y-0">
+          <div className="flex flex-col justify-between md:items-center lg:items-start space-y-5 lg:space-y-0">
             <div className="font-bold text-3xl">LearningHub</div>
             <p>
               It is a long established fact that a reader will be distracted by
@@ -59,6 +87,7 @@ const Footer = () => {
               {socials.map((item, index) => (
                 <a
                   href={item.href}
+                  target="blank"
                   className="p-3 bg-white/20 hover:bg-primaryPurple rounded-md duration-300"
                   key={index}
                 >
@@ -67,32 +96,7 @@ const Footer = () => {
               ))}
             </div>
           </div>
-          <div className="grid lg:grid-cols-2 space-y-10 lg:space-y-0">
-            <div className="lg:space-y-10 space-y-5">
-              <p className="text-3xl font-bold">Explore</p>
-              <div className="space-y-3">
-                <div className="flex items-center space-x-3 hover:text-primaryPurple duration-300">
-                  <RiSendPlane2Fill />
-                  <p className="font-bold">Home</p>
-                </div>
-                <div className="flex items-center space-x-3 hover:text-primaryPurple duration-300">
-                  <RiSendPlane2Fill />
-                  <p className="font-bold">About Us</p>
-                </div>
-                <div className="flex items-center space-x-3 hover:text-primaryPurple duration-300">
-                  <RiSendPlane2Fill />
-                  <p className="font-bold">Courses</p>
-                </div>
-                <div className="flex items-center space-x-3 hover:text-primaryPurple duration-300">
-                  <RiSendPlane2Fill />
-                  <p className="font-bold">Why Us</p>
-                </div>
-                <div className="flex items-center space-x-3 hover:text-primaryPurple duration-300">
-                  <RiSendPlane2Fill />
-                  <p className="font-bold">Testimonials</p>
-                </div>
-              </div>
-            </div>
+          <div className="grid space-y-10 lg:space-y-0 md:justify-center lg:justify-end">
             <div className="lg:space-y-10 space-y-5">
               <p className="text-3xl font-bold">Contact Info</p>
               <div className="space-y-3">

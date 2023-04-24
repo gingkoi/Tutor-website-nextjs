@@ -1,8 +1,11 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
+import { useInView } from "framer-motion";
 import TestimonialCard from "./testimonial/TestimonialCard";
 
 const Testimonial = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   const data = [
     {
       name: "Saloni Arora",
@@ -25,8 +28,16 @@ const Testimonial = () => {
     },
   ];
   return (
-    <section>
-      <div className="max-w-[1200px] mx-auto lg:py-36 py-20 font-urban px-5">
+    <section id="testimonial">
+      <div
+        className="max-w-[1200px] mx-auto lg:py-36 py-20 font-urban px-5"
+        ref={ref}
+        style={{
+          transform: isInView ? "none" : "translateY(200px)",
+          opacity: isInView ? 1 : 0,
+          transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s",
+        }}
+      >
         <div className="flex flex-col items-center justify-center">
           <div className="space-y-3">
             <h4 className="text-primaryPurple uppercase font-bold tracking-widest text-center">

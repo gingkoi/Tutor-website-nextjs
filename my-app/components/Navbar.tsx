@@ -1,41 +1,55 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import {
+  AiOutlineMenu,
+  AiOutlineClose,
+  AiOutlineArrowUp,
+} from "react-icons/ai";
 import { IoIosCafe } from "react-icons/io";
+import { Link } from "react-scroll/modules";
+import disableScroll from "disable-scroll";
 
 const Navbar = () => {
   const links = [
     {
       name: "Home",
-      href: "home",
+      href: "hero",
+      offset: -100,
     },
     {
       name: "About",
       href: "about",
+      offset: 0,
     },
     {
       name: "Courses",
       href: "courses",
+      offset: 0,
     },
     {
       name: "Testimonial",
       href: "testimonial",
+      offset: 0,
     },
     {
       name: "Why Us",
       href: "why-us",
+      offset: 0,
     },
   ];
 
   const [nav, useNav] = useState(false);
   const [color, setColor] = useState("transparent");
   const [shadow, setShadow] = useState("0 0 #0000");
+  const [opacity, setOpacity] = useState(false);
   const handleNav = () => {
     useNav(!nav);
   };
   const closeNav = () => {
     useNav(false);
   };
+
+  nav ? disableScroll.on() : disableScroll.off();
 
   useEffect(() => {
     const changeColor = () => {
@@ -44,9 +58,11 @@ const Navbar = () => {
         setShadow(
           "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)"
         );
+        setOpacity(true);
       } else {
         setColor("transparent");
         setShadow("0 0 #0000");
+        setOpacity(false);
       }
     };
     window.addEventListener("scroll", changeColor);
@@ -58,28 +74,46 @@ const Navbar = () => {
         backgroundColor: `${color}`,
         boxShadow: `${shadow}`,
       }}
-      className="w-screen bg-red-500 top-0 left-0 fixed duration-300 ease-in-out z-10"
+      className="w-screen top-0 left-0 fixed duration-300 ease-in-out z-10"
     >
       <div className="max-w-[1600px] mx-auto py-6 font-urban">
         <div className="flex flex-row justify-between items-center px-5 ">
-          <div className="font-bold text-2xl text-primaryPurple hover:text-primaryText cursor-pointer flex flex-row items-center space-x-1 duration-300">
+          <Link
+            to={"hero"}
+            smooth={true}
+            duration={500}
+            offset={-100}
+            href={"/"}
+            className="font-bold text-2xl text-primaryPurple hover:text-primaryText cursor-pointer flex flex-row items-center space-x-1 duration-300"
+          >
             <p>LearningHub</p>
             <IoIosCafe size={30} />
-          </div>
+          </Link>
           <div className="space-x-12 font-semibold hidden lg:block">
             {links.map((item, index) => (
-              <a
+              <Link
+                to={item.href}
+                smooth={true}
+                duration={500}
+                offset={item.offset}
                 href={item.href}
                 key={index}
                 className="text-primaryText text-base hover:text-primaryPurple"
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </div>
-          <div className="font-semibold py-3 px-7 bg-primaryPurple text-white rounded-md hidden lg:block hover:bg-primaryText cursor-pointer duration-300">
+          <Link
+            to={"contact"}
+            smooth={true}
+            duration={500}
+            offset={0}
+            href={"/"}
+            className="font-semibold py-3 px-7 bg-primaryPurple text-white rounded-md hidden lg:block hover:bg-primaryText cursor-pointer duration-300"
+          >
             Contact Us
-          </div>
+          </Link>
           <div className="bg-white p-3 rounded-xl lg:hidden shadow-2xl border">
             <AiOutlineMenu
               className="text-black"
@@ -119,21 +153,48 @@ const Navbar = () => {
                 </div>
                 <div className="flex flex-col space-y-2">
                   {links.map((item, index) => (
-                    <a
+                    <Link
+                      to={item.href}
+                      smooth={true}
+                      duration={500}
+                      offset={item.href === "hero" ? -100 : -30}
                       href={"/"}
                       key={index}
                       className="text-primaryGray border-b py-2 font-medium"
                       onClick={closeNav}
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   ))}
+                  <Link
+                    to={"contact"}
+                    smooth={true}
+                    duration={500}
+                    offset={0}
+                    href={"/"}
+                    className="text-primaryGray border-b py-2 font-medium"
+                    onClick={closeNav}
+                  >
+                    Contact Us
+                  </Link>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <Link
+        to={"hero"}
+        smooth={true}
+        duration={500}
+        offset={-100}
+        href={"/"}
+        className={`fixed z-[30] bottom-[5%] right-[5%] bg-primaryOrange p-3 rounded-full shadow-2xl duration-300 ease-in ${
+          opacity ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        <AiOutlineArrowUp className="text-white" size={30} />
+      </Link>
     </div>
   );
 };

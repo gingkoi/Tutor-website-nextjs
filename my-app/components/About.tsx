@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+import React, { useRef } from "react";
+import { useInView } from "framer-motion";
 import Image from "next/image";
 import {
   BsEasel2Fill,
@@ -9,6 +11,8 @@ import {
 } from "react-icons/bs";
 
 const About = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   const data = [
     {
       title: "40+ Global Hiring Partners",
@@ -55,8 +59,16 @@ const About = () => {
     },
   ];
   return (
-    <section className="bg-white">
-      <div className="max-w-[1200px] mx-auto lg:py-36 py-20 font-urban px-5">
+    <section className="bg-white" id="about">
+      <div
+        className="max-w-[1200px] mx-auto lg:py-36 py-20 font-urban px-5"
+        ref={ref}
+        style={{
+          transform: isInView ? "none" : "translateY(200px)",
+          opacity: isInView ? 1 : 0,
+          transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s",
+        }}
+      >
         <div className="grid lg:grid-cols-2">
           <div className="lg:grid grid-cols-2 mr-16 gap-3 items-end relative hidden">
             <Image
@@ -104,8 +116,11 @@ const About = () => {
               </div>
               <div className="grid md:grid-cols-2 md:gap-10 gap-y-8">
                 {data.map((item, index) => (
-                  <div className="flex flex-row md:space-x-10 space-x-8">
-                    <div key={index}>{item.icon}</div>
+                  <div
+                    className="flex flex-row md:space-x-10 space-x-8"
+                    key={index}
+                  >
+                    <div>{item.icon}</div>
                     <div>
                       <p className="text-primaryText font-bold md:text-2xl text-lg">
                         {item.title}

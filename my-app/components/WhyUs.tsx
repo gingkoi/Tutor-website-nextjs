@@ -1,8 +1,12 @@
-import React from "react";
+"use client";
+import React, { useRef } from "react";
+import { useInView } from "framer-motion";
 import { BsEmojiSmile, BsClock, BsHeadset } from "react-icons/bs";
 import WhyUsCard from "./whyUs/WhyUsCard";
 
 const WhyUs = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   const data = [
     {
       title: "Learners & counting",
@@ -27,10 +31,18 @@ const WhyUs = () => {
   ];
 
   return (
-    <section className="bg-white font-urban">
-      <div className="max-w-[1200px] mx-auto lg:py-36 py-20 font-urban px-5">
+    <section className="bg-white font-urban" id="why-us">
+      <div
+        className="max-w-[1200px] mx-auto lg:py-36 py-20 font-urban px-5"
+        ref={ref}
+        style={{
+          transform: isInView ? "none" : "translateY(200px)",
+          opacity: isInView ? 1 : 0,
+          transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s",
+        }}
+      >
         <div className="grid lg:grid-cols-2 md:space-x-16 space-y-10 lg:space-y-0">
-          <div className="grid lg:grid-cols-2 gap-5">
+          <div className="grid lg:grid-cols-2 gap-5 order-last md:order-first">
             {data.map((item, index) => (
               <WhyUsCard
                 title={item.title}

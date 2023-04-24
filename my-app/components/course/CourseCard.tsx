@@ -10,6 +10,7 @@ const CourseCard = ({
   alt,
   lesson,
   description,
+  href,
 }: {
   course: string;
   rating: number;
@@ -17,6 +18,7 @@ const CourseCard = ({
   alt: string;
   lesson: number;
   description: string;
+  href: string;
 }) => {
   const [hover, setHover] = useState(false);
   const onMouse = () => {
@@ -37,10 +39,10 @@ const CourseCard = ({
               <p className="text-white font-medium">{lesson} Lessons</p>
             </div>
           </div>
-          <div className="my-5">
+          <div className="my-5 flex group">
             <a
-              className="font-bold bg-white text-primaryPurple p-4 rounded-lg flex items-center space-x-2"
-              href="/"
+              className="font-bold bg-white text-primaryPurple p-4 rounded-lg flex items-center space-x-2 hover:bg-primaryOrange hover:text-white duration-300 "
+              href={href}
             >
               <p>Know more</p>
               <BsArrowRight />
@@ -74,7 +76,7 @@ const CourseCard = ({
         <div className="flex items-center justify-between m-7">
           <a
             className="font-bold bg-primaryPurple md:bg-white md:text-primaryPurple text-white p-4 rounded-lg"
-            href="/"
+            href={href}
           >
             Know more
           </a>

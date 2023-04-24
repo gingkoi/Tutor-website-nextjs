@@ -1,10 +1,22 @@
-import React from "react";
+"use client";
+import React, { useRef } from "react";
+import { useInView } from "framer-motion";
 import { BsArrowRight, BsFillTelephoneFill } from "react-icons/bs";
 
 const BottomBanner = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   return (
     <section className="bg-primaryPurple font-urban">
-      <div className="max-w-[1200px] mx-auto lg:py-24 py-20 font-urban px-5">
+      <div
+        className="max-w-[1200px] mx-auto lg:py-24 py-20 font-urban px-5"
+        ref={ref}
+        style={{
+          transform: isInView ? "none" : "translateY(200px)",
+          opacity: isInView ? 1 : 0,
+          transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s",
+        }}
+      >
         <div className="flex flex-col lg:flex-row items-center justify-between space-y-5 lg:space-y-0">
           <div className="space-y-3">
             <h4 className="text-white uppercase font-bold tracking-widest lg:text-left text-center">

@@ -8,7 +8,7 @@ const db = [
     alt: "Course 01",
     lesson: 29,
     genre: "Popularity",
-    href: "/",
+    href: "/courses/1",
   },
   {
     course: "Business Intelligence Program",
