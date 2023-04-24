@@ -19,6 +19,7 @@ const CourseHero = ({
   certificate,
   curriculum,
   details,
+  image,
 }: {
   heading: string;
   description: string;
@@ -26,6 +27,7 @@ const CourseHero = ({
   certificate: string;
   curriculum: any;
   details: any;
+  image: string;
 }) => {
   const [click, setClick] = useState(0);
   const handleClick = (index: number) => {
@@ -72,12 +74,7 @@ const CourseHero = ({
           <div className="order-first lg:order-last lg:absolute lg:z-[20] lg:left-[54%] lg:top-[-5%]">
             <div className="lg:w-[400px] bg-white rounded-md p-5 flex flex-col shadow-xl">
               <div className="flex justify-center">
-                <Image
-                  src={"/assets/courses/page/course-01.jpeg"}
-                  alt="course 01"
-                  width={400}
-                  height={300}
-                />
+                <Image src={image} alt="course" width={400} height={300} />
               </div>
               <div className="p-5">
                 <div className="flex justify-between p-5 border-b">

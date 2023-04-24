@@ -19,7 +19,7 @@ const db = [
     alt: "Course 02",
     lesson: 35,
     genre: "Trending",
-    href: "/",
+    href: "/courses/2",
   },
   {
     course: "Advanced AI Program",
@@ -30,7 +30,7 @@ const db = [
     alt: "Course 03",
     lesson: 40,
     genre: "Featured",
-    href: "/",
+    href: "/courses/3",
   },
   {
     course: "Data Science With R",
@@ -41,7 +41,7 @@ const db = [
     alt: "Course 01",
     lesson: 55,
     genre: "Popularity",
-    href: "/",
+    href: "/courses/4",
   },
   {
     course: "Data Science With Python",
@@ -52,7 +52,7 @@ const db = [
     alt: "Course 04",
     lesson: 58,
     genre: "Trending",
-    href: "/",
+    href: "/courses/5",
   },
 ];
 

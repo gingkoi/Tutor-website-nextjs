@@ -16,6 +16,7 @@ const CoursesPage = ({ course }: { course: any }) => {
         certificate={course.certificate}
         curriculum={course.curriculum}
         details={course.details}
+        image={course.image}
       />
       <Footer />
     </div>
