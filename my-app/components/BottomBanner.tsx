@@ -2,6 +2,8 @@
 import React, { useRef } from "react";
 import { useInView } from "framer-motion";
 import { BsArrowRight, BsFillTelephoneFill } from "react-icons/bs";
+import SignUpModal from "./modal/SignUpModal";
+import SignUpModal2 from "./modal/SignUpModal2";
 
 const BottomBanner = () => {
   const ref = useRef(null);
@@ -27,10 +29,7 @@ const BottomBanner = () => {
             </h4>
           </div>
           <div className="flex flex-col lg:flex-row items-center lg:space-x-10 space-y-5 lg:space-y-0">
-            <div className="px-8 py-4 bg-white text-primaryPurple font-bold text-xl rounded-lg flex items-center space-x-1 hover:text-white hover:bg-primaryOrange duration-300 cursor-pointer">
-              <p>Get Started Today</p>
-              <BsArrowRight size={25} />
-            </div>
+            <SignUpModal2 />
             <div className="text-white font-bold flex items-center space-x-1">
               <BsFillTelephoneFill size={25} />
               <p className="text-lg">+65 6189 9654</p>

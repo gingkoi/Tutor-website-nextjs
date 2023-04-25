@@ -2,6 +2,7 @@
 import React, { useRef } from "react";
 import Image from "next/image";
 import { useInView } from "framer-motion";
+import SignUpModal from "./modal/SignUpModal";
 
 const Hero = () => {
   const ref = useRef(null);
@@ -39,9 +40,7 @@ const Hero = () => {
                 <li>Career Assistance</li>
               </ul>
             </div>
-            <button className="bg-primaryPurple w-[250px] text-white font-bold py-4 px-4 rounded-lg text-lg hover:bg-primaryText duration-300">
-              Get Started Today
-            </button>
+            <SignUpModal />
           </div>
           <div>
             <Image
