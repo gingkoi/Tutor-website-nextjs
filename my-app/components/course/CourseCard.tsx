@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { BsFileText, BsFillStarFill, BsArrowRight } from "react-icons/bs";
 import Image from "next/image";
+import Link from "next/link";
 
 const CourseCard = ({
   course,
@@ -40,13 +41,13 @@ const CourseCard = ({
             </div>
           </div>
           <div className="my-5 flex group">
-            <a
+            <Link
               className="font-bold bg-white text-primaryPurple p-4 rounded-lg flex items-center space-x-2 hover:bg-primaryOrange hover:text-white duration-300 "
               href={href}
             >
               <p>Know more</p>
               <BsArrowRight />
-            </a>
+            </Link>
           </div>
         </div>
       </div>
