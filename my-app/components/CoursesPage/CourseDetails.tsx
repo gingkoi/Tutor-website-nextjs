@@ -1,5 +1,6 @@
 import React from "react";
 import { BsChevronRight } from "react-icons/bs";
+import Link from "next/link";
 
 const CourseDetails = () => {
   return (
@@ -10,9 +11,9 @@ const CourseDetails = () => {
             Course Details
           </h1>
           <div className="flex items-center space-x-1 text-primaryGray">
-            <a href="/" className="hover:underline">
+            <Link href="/" className="hover:underline">
               Home
-            </a>
+            </Link>
             <BsChevronRight />
             <p>Course Details</p>
           </div>
